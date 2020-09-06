@@ -10,11 +10,10 @@ pipeline {
       }
       stage('Docker Build..') {
          steps {
-            powershell label: 'cd azure-vote..', script: 'cd azure-vote/'
             powershell label: 'get docker images..', script: 'docker images -a'   
             powershell(script: """
              cd azure-vote/
-             docker build -t jenkinspipe .
+             docker build -t jenkinspipe1 .
             """)        
            
          }
