@@ -5,14 +5,15 @@ pipeline {
       stage('Verify Branch') {
          steps {
             echo "$GIT_BRANCH"
-            powershell label: 'cd azure-vote..', script: 'cd azure-vote/'
+           
          }
       }
       stage('Docker Build..') {
          steps {
-
+            powershell label: 'cd azure-vote..', script: 'cd azure-vote/'
             powershell label: 'get docker images..', script: 'docker images -a'          
-          
+            powershell label: 'docker build..', script: 'docker build -t jenkins-pipeline -f Dockerfile'  
+            powershell label: 'get docker images..', script: 'docker images -a'   
          }
       }
    }
