@@ -13,8 +13,7 @@ pipeline {
             powershell(script: """
                cd azure-vote/
                docker images -a
-               docker build -t jenkins-pipeline .
-               docker images -a
+               docker build -t jenkins-pipeline .            
                cd ..
             """)
          }
