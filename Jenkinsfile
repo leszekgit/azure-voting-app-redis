@@ -67,7 +67,7 @@ pipeline {
       stage ('Run Trivy') {
          steps {
             powershell(script: """
-              C:\\Windows\\System32\wsl.exe --
+              C:\\Windows\\System32\\wsl.exe --
               sudo trivy leszekg8/jenkinsmoderncicd
             """)
          }
