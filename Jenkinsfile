@@ -13,8 +13,7 @@ pipeline {
             powershell label: 'cd azure-vote..', script: 'cd azure-vote/'
             powershell label: 'get docker images..', script: 'docker images -a'          
             pwsh(script: """ 
-            cd azure-vote/
-            docker build -t jenkinspipeline .
+            docker build -t jenkinspipeline -f ./azure-vote/Dockerfile
             """)
          }
       }
