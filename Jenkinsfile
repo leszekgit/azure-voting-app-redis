@@ -13,7 +13,7 @@ pipeline {
             powershell label: 'get docker images..', script: 'docker images -a'   
             powershell(script: """
              cd azure-vote/
-             docker build -t jenkinspipe1 .
+             docker build -t jenkinspipe .
             """)        
            
          }
