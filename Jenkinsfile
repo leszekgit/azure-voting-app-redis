@@ -12,7 +12,7 @@ pipeline {
          steps {
             powershell label: 'cd azure-vote..', script: 'cd azure-vote/'
             powershell label: 'get docker images..', script: 'docker images -a'          
-            powershell label: 'docker build..', script: 'docker build . -t jenkinspipeline'  
+            powershell label: 'docker build..', script: 'docker build \. -t jenkinspipeline'  
             powershell label: 'get docker images..', script: 'docker images -a'   
          }
       }
