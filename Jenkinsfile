@@ -12,12 +12,7 @@ pipeline {
          steps {
 
             powershell label: 'get docker images..', script: 'docker images -a'          
-            pwsh(script: """
-               docker images -a
-               docker build -t jenkins-pipeline .
-               docker images -a
-               cd ..
-            """)
+          
          }
       }
    }
